@@ -45,6 +45,16 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+      -- Disable all diagnostics
+      vim.diagnostic.config({
+        virtual_text = false,
+        signs = true,
+        float = {
+          show_header = false,
+          border = 'none',  -- You can use 'none' or other border styles
+        },
+      })
     end,
   },
 }
